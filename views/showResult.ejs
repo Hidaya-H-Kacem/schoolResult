@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Import head -->
+<%- include('partials/head') %>
+
+<body>
+
+    <!-- Import navigation -->
+    <%- include('partials/nav') %>
+
+    <% if (student.average >= 10) { %>
+
+    <img src="/images/balloon3.png" class="bl3" id="bal3">
+
+    <img src="/images/balloon2.png" class="bl2" id="bal2">
+
+    <img src="/images/balloon1.png" class="bl" id="bal1">
+
+    <% } %> 
+
+    <div class="layoutGlobal">
+        <div class="layout">
+            <div class="layout_header">
+                <div class="header_secondP">
+                    <% let st = ''; %> 
+                    <% if (student.average >= 10) { %>
+                        <i class="fas fa-graduation-cap"></i>
+                        <p class="happy">Congratulation!</p>
+                    <% } else { %>
+                        <i class="fas fa-frown"></i>
+                        <p class="happy">Sorry you are failed!</p>
+                         <% } %> 
+                     
+                    <p class="HDate">21 Mai, 2021</p>
+                </div>
+            </div>
+
+            <div class="layout_body">
+                <p>Hi <%= student.studentname %>  ,</p>
+                
+                <% if(student.average >= 10) { %>
+                    <p> Gooood, you are congratulate with <%= student.average %>  average.</p>
+                    <% } else { %>
+                    <p> sorry, you are failed with<%= student.average %> average.</p>
+                    <% } %>
+
+                <p>CIN: <%= student.cin %>  </p>
+                <p>Class: <%= student.class %> </p>
+
+                <button>Contact Us</button>
+
+                <p>Best wishes..</p>
+
+            </div>
+        </div>
+
+
+    </div>
+    
+    <!-- Scripts -->
+    <script src="/javascripts/student_cg.js"></script>
+</body>
+</html>

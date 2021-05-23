@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Import head -->
+<%- include('partials/head') %>
+
+<body>
+
+    <!-- Import navigation -->
+    <%- include('partials/nav') %>
+
+    <div class="api__root">
+        <h2 class="api__title"> Welcome our students</h2>
+        <p class="api__text">A simple <span style="color: crimson;">School</span> application.</p>
+        
+        <div class="cards">
+
+            <% students.forEach(student => { %>
+
+            <div class="student__card card">
+                <p class="card__name"><%= student.studentname %></p>
+                <p class="card__class">CIN: <%= student.cin %></p>
+                <a href="/result/<%= student.id %>/show" class="api__update" style="background-color: rgb(32, 208, 221); ">Result</a>
+            </div>
+
+            <% }) %>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

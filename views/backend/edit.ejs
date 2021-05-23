@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Import head -->
+<%- include('../partials/head') %>
+
+<body>
+
+    <div class="api__root">
+        <h2 class="api__title">student</h2>
+        <span>Create a student</span>
+        <p class="api__text">Let's create a new student</p>
+
+        <div class="api__app">
+            <form class="api__form" action="/backend/<%= student.id %>/edit?_method=PUT" method="POST" autocomplete="on">
+
+                <div class="api__task">
+                    <label for="studentname">Student name <span class="required">*</span></label>
+                    <input type="text" name="studentname" id="studentname" class="api__input" value="<%= student.studentname %>">
+                </div>
+                <div class="api__task">
+                    <label for="cin">CIN <span class="required">*</span></label>
+                    <input type="text" name="cin" id="cin" class="api__input" value="<%= student.cin %>">
+                </div>
+                <div class="api__task">
+                    <label for="class">Class <span class="required">*</span></label>
+                    <input type="text" name="class" id="class" class="api__input" value="<%= student.class %>">
+                </div>
+                <div class="api__task">
+                    <label for="average">Average <span class="required">*</span></label>
+                    <input type="number" name="average" id="average" class="api__input" value="<%= student.average %>">
+                </div>
+                <div class="api__button">
+                    <button class="api__add">Update</button>
+                    <a href="/backend" class="api__update" style="background-color: rgb(148, 170, 148); ">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/index.js"></script>
+</body>
+
+</html>

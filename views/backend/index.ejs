@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Import head -->
+<%- include('../partials/head') %>
+
+<body>
+
+
+    <div class="api__root">
+        <h2 class="api__title"> Welcome to <%= title.toLowerCase() %> </h2>
+        <p class="api__text">A simple <span style="color: crimson;">School</span> application.</p>
+        <p class="api__text">Liste of students: <a href="/backend/create" class="api__update">Add +</a> </p>
+    </div>
+
+    <div class="api__tasks">
+        <ul class="api__list">
+
+            <% students.forEach(student => { %>
+             
+                <li class="api__items2" style="list-style: none;">
+                    <span><%= student.studentname %></span>
+                    <div class='li__i'>
+                        <a href="/backend/<%= student.id %>/edit" class="api__link" style="text-decoration: none;"> <i class="far fa-edit" style="color: rgb(58, 129, 58)"></i> </a>
+    
+                        <!-- DELETE -->
+                        <form action="/backend/<%= student.id %>?_method=DELETE" method="POST">
+                            <button class="btn__i" ><i class="far fa-trash-alt" style="color: rgb(202, 35, 35); padding: 0 10px;"></i></button>
+                        </form>
+                    </div>
+                </li>
+            <% }) %>
+
+        </ul>
+    </div>
+
+    <!-- Scripts -->
+</body>
+
+</html>
